@@ -1,25 +1,41 @@
 <table class="scoring-board">
-<form class ="frame_one" action="/" method="post">
-<tr >
-	<td>
-		Frame 1
-	</td>
-	<td>
-		<input class="roll_one" name="roll_one" type="text" value="<%= strike?(display_roll(@roll_one)) %>">
-		<input class="roll_two" name="roll_two" type="text" value="<%= spare?(display_roll(@roll_two)) %>">
-	</td>
+
+	<tr class="frame_one">
+	<form action="/" method="post">
+		<td>
+			Frame 1
+		</td>
+		<td>
+			<input name="roll_one" type="text" value="<%= strike?(display_roll(@roll_one)) %>">
+			<input name="roll_two" type="text" value="<%= spare?(display_roll(@roll_two)) %>">
+		</td>
 		<td>
 			<h1><%= display_score_for_frame %></h1>
 		</td>
-	<td>
-		<button class="calc_one" type="Calc">Next</button>
-	</td>
-</tr>
-</form>
-<tr>
-	<td>Test</td>
-	<td></td>
-</tr>
+		<td>
+			<button type="Calc">Next</button>
+		</td>
+	</form>
+	</tr>
+
+	<tr class="frame_two">
+	<form action="/" method="post">
+		<td>
+			Frame 2
+		</td>
+		<td>
+			<input name="roll_one" type="text" value="<%= strike?(display_roll(@roll_one)) %>">
+			<input name="roll_two" type="text" value="<%= spare?(display_roll(@roll_two)) %>">
+		</td>
+		<td>
+			<h1><%= display_score_for_frame %></h1>
+		</td>
+		<td>
+			<button type="Calc">Next</button>
+		</td>
+	</form>
+	</tr>
+
 <tr>
 	<td>Test</td>
 	<td></td>
