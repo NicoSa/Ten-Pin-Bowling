@@ -25,6 +25,17 @@ describe 'Scoring>' do
 				expect(page).to have_content('Wrong format!')
 			end
 		end
+
+		it 'only displays an X and an empty field when your first roll is a strike' do
+			visit('/')
+			within('.frame_one') do
+				fill_in('roll_one', with => 10)
+				click_on('Next')
+				expect(page).to_not have_content('You can´t knock down more than ten pins in a roll')
+				expect(page).to have_content('10')
+				expect(page).to_not have_content('/')
+			end
+		end
 	end
 
 	# context 'Second Frame>' do

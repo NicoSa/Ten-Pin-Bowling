@@ -11,10 +11,20 @@ module DisplayHelper
 	end
 
 	def spare?(score)
-		if calculate_score_for_frame == 10
+		if (calculate_score_for_frame == 10) && (@roll_two.to_i != 0)
 			'/'
+		elsif (calculate_score_for_frame == 10) && (@roll_two.to_i == 0)
+			''
 		else
 			score
+		end	
+	end
+
+	def strike?(score)
+		if score == 10
+			'X'
+		else
+		 	score
 		end
 	end
 
