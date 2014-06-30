@@ -15,13 +15,19 @@ describe 'Scoring>' do
 			end
 		end
 
-		it 'throws an error when wrong format is entered' do
+		it 'throws an error when wrong format is entered and doesn´t change total score' do
 			visit('/')
 			within('.frame_one') do
 				fill_in('roll_one', with => 15)
 				click_on('Next')
+				expect(page).to have_content('You can´t knock down more than ten pins in a roll')
+				expect(page).to_not have_content('15')
+				expect(page).to have_content('Wrong format!')
 			end
-			expect(page).to have_content('You can´t knock down more than ten pins in a roll')
 		end
 	end
+
+	# context 'Second Frame>' do
+
+	# 	it ''
 end

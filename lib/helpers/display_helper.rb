@@ -1,26 +1,36 @@
 module DisplayHelper
 
 	def display_score_for_frame
-		unless @roll_one && @roll_two 
+		if rolls_present 
 			'Click next!'
+		elsif correct_format?
+			calculate_score_for_frame
 		else
-			@roll_one.to_i + @roll_two.to_i
+			'Wrong format!'
 		end
 	end
 
-	def display_roll_one
-		unless @roll_one
-			'Roll one'
+	def spare?(score)
+		if calculate_score_for_frame == 10
+			'/'
 		else
-			@roll_one.to_i
+			score
 		end
 	end
 
-	def display_roll_two
-		unless @roll_two
-			'Roll two'
+	def display_roll(roll)
+		unless roll
+			'Roll'
 		else
-			@roll_two.to_i		
+			roll.to_i
 		end
+	end
+
+	def rolls_present
+		!@roll_one && !@roll_two 
+	end
+
+	def calculate_score_for_frame
+		@roll_one.to_i + @roll_two.to_i
 	end
 end

@@ -17,9 +17,9 @@ get '/' do
 end
 
 post '/' do
-	correct_format?		
 	@roll_one = params[:roll_one]
 	@roll_two = params[:roll_two]
+	correct_format?		
 	erb :index
 end
 

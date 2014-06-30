@@ -5,8 +5,8 @@
 		Frame 1
 	</td>
 	<td>
-		<input class="roll_one" name="roll_one" type="text" value="<%= display_roll_one %>">
-		<input class="roll_two" name="roll_two" type="text" value="<%= display_roll_two %>">
+		<input class="roll_one" name="roll_one" type="text" value="<%= display_roll(@roll_one) %>">
+		<input class="roll_two" name="roll_two" type="text" value="<%= spare?(display_roll(@roll_two)) %>">
 	</td>
 		<td>
 			<h1><%= display_score_for_frame %></h1>
