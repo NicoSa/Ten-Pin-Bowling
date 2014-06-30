@@ -1,0 +1,37 @@
+<table class="scoring-board">
+<form class ="frame_one" action="/" method="post">
+<tr >
+	<td>
+		Frame 1
+	</td>
+	<td>
+		<input class="roll_one" name="roll_one" type="text" placeholder="Roll one">
+		<input class="roll_two" name="roll_two" type="text" placeholder="Roll two">
+	</td>
+		<td>
+			<%= unless @roll_one && @roll_two 
+					'click next'
+				else
+					@roll_one.to_i + @roll_two.to_i
+				end %>
+		</td>
+	<td>
+		<button class="calc_one" type="Calc">Next</button>
+	</td>
+</tr>
+<tr>
+	<td>Test</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Test</td>
+	<td></td>
+</tr>
+<tr>
+	<td>Test</td>
+	<td></td>
+</tr>
+
+</table>
+
+</form>
